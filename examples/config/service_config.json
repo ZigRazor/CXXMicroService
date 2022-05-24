@@ -1,0 +1,6 @@
+{
+    "service_name" : "test_service",
+    "protocol" : "ipc",
+    "address" : "127.0.0.1",
+    "port" : "1234"
+}

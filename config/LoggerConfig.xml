@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+  <!-- Output the log message to system console.  -->
+  <appender name="ConsoleAppender" class="org.apache.log4j.ConsoleAppender">    
+    <param name="Target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p %c{1} - %m%n"/>
+        </layout>
+  </appender>
+
+  <!-- Output the log message to log file -->
+  <appender name="MicroServiceFileAppender" class="org.apache.log4j.RollingFileAppender">
+    <param name="file" value="../log/MicroService.${MICROSERVICE_LOG_PID_DATE}.log" />
+    <param name="maxFileSize" value="200MB" />
+    <param name="maxBackupIndex" value="10" />
+    <!--param name="append" value="true" /-->
+    <layout class="org.apache.log4j.PatternLayout">
+      <!--param name="ConversionPattern" value="%d %-5p %C{2} (%F:%L) - %m%n" / -->
+      <!--param name="ConversionPattern" value="%d %-5p %F: [%L] - %m%n" / -->
+      <param name="ConversionPattern" value="%d %-5p %C %M: [%L] - %m%n" />
+    </layout>
+  </appender>
+
+  <!-- Async appenders -->
+  <appender name="MicroserviceAsyncFileAppender" class="org.apache.log4j.AsyncAppender">
+    <param name="BufferSize" value="500"/>
+    <param name="Blocking" value="true"/>
+    <param name="LocationInfo" value="true"/>
+    <appender-ref ref="MicroServiceFileAppender"/>
+  </appender>
+
+  <appender name="ASYNC_CONSOLE" class="org.apache.log4j.AsyncAppender">
+    <param name="BufferSize" value="500"/>
+    <param name="Blocking" value="true"/>
+    <param name="LocationInfo" value="true"/>
+    <appender-ref ref="ConsoleAppender"/>
+  </appender>
+
+  <!-- root appender -->
+  <root>
+        <priority value="debug" />
+        <!--appender-ref ref="ASYNC_CONSOLE" / -->
+  </root>
+
+  <!-- Specify the level for some specific categories -->
+  <category name="MicroService" >
+        <priority value ="debug" />
+        <appender-ref ref="MicroServiceFileAppender"/>
+  </category>
+
+ </log4j:configuration>
+ 

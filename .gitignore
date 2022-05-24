@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+
+# Directory to exclude
+build
+dist
+log
+.vscode
+
