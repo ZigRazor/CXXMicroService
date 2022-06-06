@@ -2,8 +2,8 @@ path_classifiers:
   test: "*/*/test_*.cpp"
   docs: "generate_javadoc.py"
 queries:
-- exclude: "$LGTM_SRC/build"
-- exclude: "$LGTM_SRC/third_party"
+- exclude: "./build"
+- exclude: "./third_party"
 extraction:
   cpp:
     before_index: "export CXXMICROSERVICE=$LGTM_SRC/CXXMicroService"
