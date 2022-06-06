@@ -44,7 +44,7 @@
 #define MICROSERVICE_LOG_INIT(xmlConfigFile) {                                   \
     struct timeval t;                                                   \
     gettimeofday (&t, NULL);                                            \
-    struct tm* time = localtime(&(t.tv_sec));                           \
+    struct tm* time = localtime_r(&(t.tv_sec));                           \
     char date_str[32];                                                  \
     strftime(date_str, sizeof(date_str), "%Y-%m-%d_%H:%M:%S", time);    \
     char buffer[64];                                                    \
