@@ -44,7 +44,7 @@ namespace MicroServices
         std::map<std::string, std::function<int(const std::string &)>> serviceMap;
 
         void init();
-        int stopCommand(const std::string &digest) final;
+        int stopCommand(const std::string &digest); //not overridable
     };
 
 }
