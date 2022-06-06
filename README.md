@@ -34,7 +34,7 @@ If you are interested, please contact us at zigrazor@gmail.com or contribute to 
 | :memo: | Introduction of more complete Examples | TBD |
 | :memo: | Introduction of Orchestrator | TBD |
 | :memo: | Introduction of Unit Test Framework | TBD |
-| :memo: | Introduction of basic CI/CD | TBD |
+| :heavy_check_mark: | Introduction of basic CI/CD | Jun 6, 2022 |
 | :memo: | Advanced CI/CD | TBD |
 | :memo: | First Beta Release 0.0.1 | TBD |
 | :memo: | Introduce HTTP interface | TBD |
