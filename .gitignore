@@ -37,3 +37,5 @@ dist
 log
 .vscode
 
+cmake-build-debug/*
+.idea/*
